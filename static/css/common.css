@@ -1,0 +1,320 @@
+@charset "utf-8";
+html, body,iframe,
+h1, h2, h3, h4, h5, h6, p,ol, ul ,form,dl ,dd,td,input,table,tr{
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", SimHei, "Microsoft JhengHei", "STHeiti ";
+}
+img{
+    border: none;
+}
+/* HTML5 display-role reset for older browsers */
+article,footer, header, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a{ text-decoration:none;outline:none;}
+/************tools css************/
+/****定义有边框的表格*****/
+.border-table{
+    border-collapse: separate;
+    background: #ffffff;
+    width: 100%;
+    border: 1px solid #dddddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.border-table td{
+    border-style:solid;
+    border-width:1px 0px 0px 1px;
+    border-color: #dddddd;
+}
+.border-table tr:first-child td{
+    border-top: none;
+}
+.border-table tr td:first-child{
+    border-left:none;
+}
+/****清除浮动*****/
+.clearFix:before,.clearFix:after,.ui-content:after{
+    content:"";
+    display:table;
+}
+.clearFix:after,.ui-content:after{
+    clear:both
+}
+.clearFix{*zoom:1}
+/******多列布局********/
+.ui-row:after{
+    display: table;
+    clear: both;
+    content:"";
+}
+.ui-row>[class*="col-"],.ui-row>li{
+    float: left;
+}
+body{
+    background-color: #eee;
+    min-width: 1200px;
+}
+/******************设置定义页面内容区域的宽度**********************/
+.ui-content{
+    width: 1200px;
+    margin: 0 auto;
+}
+/***********************************************/
+header{
+    background: #ffffff;
+}
+.ui-header{
+    padding: 10px 0;
+}
+.logo-box{
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+.logo-link{
+    width: 100%;
+    height: 100%;
+}
+.logo-link img{
+    width: 100%;
+    height: 100%;
+}
+.header-nav {
+    float: left;
+    margin-left: 40px;
+}
+.header-nav li{
+    margin-right: 10px;
+}
+.header-nav li a{
+    display: inline-block;
+    font-size: 14px;
+    color: #444444;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 7px;
+}
+.header-nav li a:hover{
+    background: #f2f2f2;
+    color: #3a8ee6;
+}
+.header-nav li a.active{
+    color: #3a8ee6;
+}
+/***************footer底部样式*****************/
+.ui-footer{
+    background-color: #eee;
+    padding: 40px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    min-width: 1200px;
+}
+.coBox:after{
+    display: table;
+    content: "";
+    clear: both;
+}
+.coBox{
+    width: 571px;
+    margin: 0 auto;
+}
+.coBox>li{
+    float: left;
+    padding: 0 30px;
+}
+.coBox>li:first-child{
+    height: 124px;
+    border-right: 1px solid #ccc;
+}
+.myWeChatBox{
+    text-align: center;
+}
+.myWeChatBox img{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+.myWeChatBox img:first-child{
+    margin-right: 30px;
+}
+.contactMeBox{
+    width: 180px;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+.contactMeBox p{
+    font-size: 14px;
+    color: #666;
+    line-height: 24px;
+}
+.contactMeBox p.title{
+    font-weight: bold;
+    color: #666;
+    font-size: 16px;
+}
+.contactMeBox p.tag{
+    font-weight: bold;
+}
+.contactMeBox p.tag a{
+    color: #666;
+    font-size: 14px;
+    font-weight: normal;
+}
+.bottomBox{
+    font-size: 12px;
+    color: #666;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 10px;
+}
+.player-content-box{
+    padding: 15px 0;
+}
+#chatBox{
+    margin-top: 0;
+    box-shadow: 0 0 3px 1px #ccc;
+}
+/***************************/
+.index-section .ui-content{
+    margin-top: 20px;
+}
+.content-left{
+    float: left;
+    width: 860px;
+    background: #ffffff;
+}
+.content-right{
+    float: left;
+    width: 320px;
+    margin-left: 20px;
+}
+.right-card{
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+.right-card:first-child{
+    margin-top: 0;
+}
+.right-card .card-title{
+    font-size: 14px;
+    color: #444444;
+    font-weight: bold;
+    line-height: 30px;
+    border-bottom: 1px solid #dedede;
+}
+/************************/
+.article-box{
+    padding: 20px;
+}
+.article-box .articleTitle{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.article-box p{
+    text-indent: 2rem;
+    font-size: 14px;
+    line-height: 25px;
+    color: #666666;
+    margin-top: 10px;
+}
+/**************个人站点导航****************/
+.nav-card{
+    padding-top: 10px;
+}
+.nav-card li{
+    width: 33.33333%;
+}
+.nav-card li a{
+    display: block;
+    margin: 5px;
+    padding: 5px 10px;
+    background: #e5edff;
+    border-radius: 7px;
+    font-size: 14px;
+    color: #909399;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 25px;
+    height: 25px;
+}
+.nav-card li a:hover{
+    background: #EBEEF5;
+    color: #409EFF;
+}
+/******************二维码工具************************/
+.qrcode-card{
+    padding: 15px 0;
+}
+.qrcode-card .qrcode-text{
+    display: block;
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #444444;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.qrcode-cav{
+    width: 220px;
+    height: 220px;
+    background: #e5edff;
+    border-radius: 4px;
+    margin: 0 auto;
+    padding: 15px;
+}
+/******************天气************************/
+.weather-card{
+    background-color: #fff;
+    text-align: center;
+    color: #333;
+    padding: 15px 0;
+}
+.base-info{
+    line-height: 32px;
+}
+.weather-date,.weather-info,.wind-temp{
+    line-height: 28px;
+}
+.wind-temp{
+    color: #ff7471;
+}
+.query-city{
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.pm-number{
+    font-size: 20px;
+    color: #4d86ff;
+}
+.weather-info span:first-child{
+    margin-right: 15px;
+}
+/**********************/
+.ui-loadImg{
+    display: block;
+    width: 60px;
+    height: 15px;
+    margin: 15px auto;
+}

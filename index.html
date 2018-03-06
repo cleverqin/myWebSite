@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>首页</title>
+    <meta name="author"content="cleverqin,705597001@qq.com">
+    <meta name="keywords"content="js,html,css,分享,案例">
+    <meta name="description"content="使用js,html,css搭建的个人站点，在这里与我共同分享知识和快乐">
+    <link rel="stylesheet" href="static/css/common.css">
+    <link rel="stylesheet" href="static/css/plug-ins.css">
+</head>
+<body>
+<div id="app">
+    <img src="static/img/three-dots.svg" alt="1" v-show="!loaded" class="ui-loadImg">
+    <template id="home_tpl" type="text/html">
+        <div class="index-page">
+            <page-header></page-header>
+            <router-view></router-view>
+            <page-footer></page-footer>
+        </div>
+    </template>
+    <template id="header_tpl" type="text/html">
+        <header>
+            <div class="ui-header">
+                <div class="ui-content">
+                    <div class="logo-box">
+                        <router-link to="/" class="logo-link">
+                            <img src="https://git.oschina.net/cleverqin/img/raw/master/headerIMG.png" alt="">
+                        </router-link>
+                    </div>
+                    <ul class="header-nav ui-row">
+                        <li><router-link to="/" :class="{active:$route.path=='/'}">首页</router-link></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </template>
+    <template id="footer_tpl" type="text/html">
+        <footer class="ui-footer">
+            <div class="ui-content">
+                <ul class="coBox">
+                    <li>
+                        <div class="contactMeBox">
+                            <p class="title">联系我</p>
+                            <p class="tag">邮箱:<a href="#">705597001@qq.com</a></p>
+                            <p class="tag">手机:<a href="#">15238****27</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myWeChatBox"><img src="https://git.oschina.net/cleverqin/img/raw/master/mmqrcode.png"/><img src="https://git.oschina.net/cleverqin/img/raw/master/myAliPay.png"/></div>
+                    </li>
+                </ul>
+                <div class="bottomBox">备注：本网站所有权归创作者所有，如有疑问请联系作者。</div>
+            </div>
+        </footer>
+    </template>
+    <template id="index_tpl" type="text/html">
+        <section class="index-section">
+            <div class="content-section">
+                <div class="ss-slide" id="slidesBox">
+                    <ul class="ss-content" id="box" >
+                        <li >
+                            <img src="static/img/a1%20(10).jpg">
+                        </li>
+                        <li >
+                            <img src="static/img/a1%20(11).jpg">
+                        </li>
+                        <li >
+                            <img src="static/img/a1%20(12).jpg">
+                        </li>
+                        <li >
+                            <img src="static/img/a1%20(16).jpg">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+                <div class="content-left">
+                    <article class="article-box">
+                        <div class="articleTitle">生活就是哲学</div>
+                        <p>
+                            今天清晨起来，阳光柔和，微风拂面。你顺着人行道，往学校或公司的方向走，
+                            忽然看见前面一位老太太摔倒。这时你毫不犹豫地趋前扶她起来，还问她受伤没有。
+                        </p>
+                        <p>
+                            你为什么这么做？这个问题值得想一想，不要轻易回答“因为我觉得应该”，或者“因为我高兴”。
+                        </p>
+                        <p>
+                            前几天的一个清晨，天色昏暗，风强雨骤，你在同一条人行道上也瞥见有人摔倒，
+                            却自顾撑着伞走过去了。为什么同样是你，却有两种相反的待人态度？
+                        </p>
+                        <p>
+                            难道是天气影响你的心情，心情在决定你的行为？仔细反省一下，似乎不是如此单纯。
+                            人的任何行为，背后都有一个信念作为预设。譬如，当我帮助别人时，
+                            我相信：人与人之间应该互相扶持，人们形成一个大家庭，人生是有意义的，我帮人，
+                            别人也会在我需要帮助时伸出援手；反之，当我拒绝帮助别人时，我心中相信：人与人各自孤立，
+                            人类并无相互关怀，人生难免一死，我也无法逃避命运的摆布，还是少管些闲事儿吧。
+                        </p>
+                        <p>
+                            问题是，你有时乐于助人，有时又拒绝助人，难道是在心中同时存在两套相反的信念？
+                            如果是的话，你又如何认定自己是“一个人”呢？你怎能期望别人了解你？甚至，你了解自己吗？
+                        </p>
+                        <p>
+                            如果你对这些问题觉得好奇，想要进一步探索答案，那么你就走上哲学之途了。
+                            哲学是用比较系统的方式去思考人生的现象，然后为人生的种种抉择提供指引。
+                            找到自己心中究竟潜存着哪些互不兼容的信念，进而予以疏导、整理、融合，使其显示同一立场，
+                            这种“化隐为显”的工作，是哲学上关键的一步。哲学之有益于人生，也由此开始。这是任何人都可以做得到的。
+                        </p>
+                        <p>
+                            确立自己心中的基本信念之后，我们在人生道路上就可以免除许多不必要的困惑、彷徨、挣扎、挫折。
+                            天气不能再影响我们，因为我们心中自有温暖的阳光；环境不能再干扰我们，因为我们心中自有坚定的主张。
+                            我们可以开始活出真正的自我，不仅内外如一、表里一致，而且始终清楚自己正在做什么，以及为什么这么做。
+                        </p>
+                        <p>
+                            由此看来，思想的功用真是伟大。人可以凭借思想，突破有限的时间与空间，
+                            掌握自己内心的真我，亦不受气候、环境、人群所拘束的自我。这个自我，既有清楚的信念，
+                            又有明确的方向，因此一颦一笑、一举手一投足、一言一行，都是非常真诚、非常踏实的。不仅如此，
+                            思想还能引领我们树立风范，见贤思齐，使我们在面临重大抉择时，会去想一想：若换了是孔子，是耶稣，是苏格拉底，
+                            是佛陀，或是其他圣贤，处在我的情况时，又将如何决定行止？
+                        </p>
+                        <p>
+                            如此念头一转，平平凡凡的人生就可能展现壮阔的波澜，高潮迭起。
+                            人生的每一分每一秒都值得珍惜，因为其中充满了新的挑战，等着你以新的精神去响应，从而开拓新的人生境界。
+                        </p>
+                        <p>
+                            有人说：“生活就是文化，生活就是教育。”我们也可以说：“生活就是哲学——不过还须加上一个小小的习惯，
+                            即思考。”孟子肯定人的尊严，声称“人人有贵于己者，弗思耳矣”。只要养成思考的习惯，
+                            生活的质量自然会随之提高，生命的内涵也将更为充实。哲学的确是我们品味人生的开始。
+                        </p>
+                    </article>
+                </div>
+                <div class="content-right">
+                    <div class="right-card">
+                        <div class="card-title">今日天气</div>
+                        <div class="card-body">
+                            <img src="static/img/three-dots.svg" alt="1" v-show="!weather" class="ui-loadImg">
+                            <div class="weather-card" v-if="weather">
+                                <div class="base-info">
+                                    <span class="query-city">{{weather.city}}</span>
+                                    <span class="pm-25">pm2.5：</span>
+                                    <span class="pm-number">{{weather.pm25}}</span>
+                                </div>
+                                <div class="weather-date">{{weather.weather[0].date}}</div>
+                                <div class="weather-info">
+                                    <span>{{weather.weather[0].weather}}</span>
+                                    <span>{{weather.weather[0].wind}}</span>
+                                </div>
+                                <div class="wind-temp">{{weather.weather[0].temp}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-card">
+                        <div class="card-title">个人站点导航</div>
+                        <div class="card-body">
+                            <div class="nav-card">
+                                <ul class="ui-row">
+                                    <li><a href="https://github.com/cleverqin" title="GitHub">GitHub</a></li>
+                                    <li><a href="http://blog.csdn.net/q705597001" title="个人博客">个人博客</a></li>
+                                    <li><a href="https://gitee.com/cleverqin" title="码云">码云</a></li>
+                                    <li><a href="http://music.163.com/#/user/home?id=371480227" title="网易云音乐">网易云音乐</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-card">
+                        <div class="card-title">二维码工具</div>
+                        <div class="card-body">
+                            <div class="qrcode-card">
+                                <input type="text"class="qrcode-text" v-model="text" @change="renderQRcode(text)">
+                                <div class="qrcode-cav" ref="qrcode"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</div>
+<script src="static/libs/js/jquery-1.11.1.min.js"></script>
+<script src="static/libs/js/vue.min.2.5.3.js"></script>
+<script src="static/libs/js/vue-router.min.js"></script>
+<script src="static/libs/js/qrcode.min.js"></script>
+<script src="static/js/plug-ins.js"></script>
+<script src="static/js/common.js"></script>
+</body>
+</html>
