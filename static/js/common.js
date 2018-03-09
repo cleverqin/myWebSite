@@ -42,6 +42,9 @@ var index={
         }
     }
 }
+var nav={
+    template:"#nav_tpl"
+}
 Vue.component("page-header",{
     template:"#header_tpl"
 })
@@ -58,6 +61,11 @@ var routes  =[
                 path:"/",
                 name:"index",
                 component:index
+            },
+            {
+                path:"/nav",
+                name:"nav",
+                component:nav
             }
         ]
     }
