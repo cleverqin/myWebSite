@@ -1,0 +1,63 @@
+<section class="about_page">
+    <div class="ui-content">
+        <div class="resume-box" v-if="my">
+            <div class="resume-content">
+                <div class="resume-title">个人简历</div>
+                <div class="resume-section">
+                    <div class="section-header">基本信息</div>
+                    <div class="section-body">
+                        <table class="resume-baseInfo">
+                            <tr>
+                                <td class="pramas-col">姓名：</td><td>{{my.myInfo.name}}</td><td class="pramas-col">出生日期：</td><td>{{my.myInfo.birth}}</td>
+                            </tr>
+                            <tr>
+                                <td class="pramas-col">毕业院校：</td><td>{{my.myInfo.school}}</td><td class="pramas-col">工作年限：</td><td>{{my.myInfo.workTime}}</td>
+                            </tr>
+                            <tr>
+                                <td class="pramas-col">所学专业：</td><td>{{my.myInfo.major}}</td><td class="pramas-col">学历：</td><td>{{my.myInfo.education}}</td>
+                            </tr>
+                            <tr>
+                                <td class="pramas-col">联系电话：</td><td>{{my.myInfo.phone}}</td><td class="pramas-col">电子邮箱：</td><td>{{my.myInfo.email}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="resume-section">
+                    <div class="section-header">项目经验</div>
+                    <div class="section-body">
+                        <div class="express-card" v-for=" item in my.express">
+                            <div class="express-row">
+                                <div class="row-tag">所在公司：</div>
+                                <div class="row-content">{{item.company}}<span>{{item.date}}</span></div>
+                            </div>
+                            <div class="express-row">
+                                <div class="row-tag">项目名称：</div>
+                                <div class="row-content">{{item.projectName}}</div>
+                            </div>
+                            <div class="express-row">
+                                <div class="row-tag">主要职责：</div>
+                                <div class="row-content" v-html="item.duty"></div>
+                            </div>
+                            <div class="express-row">
+                                <div class="row-tag">所用技术：</div>
+                                <div class="row-content">{{item.technology}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-section">
+                    <div class="section-header">个人简介</div>
+                    <div class="section-body">
+                        <div v-html="my.aboutMe" class="aboutMe"></div>
+                    </div>
+                </div>
+                <div class="resume-section">
+                    <div class="section-header">个人技能</div>
+                    <div class="section-body">
+                        <div class="resume-article" v-text="my.myTechnology"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

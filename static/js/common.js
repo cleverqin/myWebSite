@@ -45,6 +45,22 @@ var index={
 var nav={
     template:"#nav_tpl"
 }
+var about=Vue.component('about',function (resolve, reject) {
+    $.get("./pages/about.html",function (data) {
+        resolve({
+            template: data,
+            data:function () {
+                return {my:""}
+            },
+            created:function () {
+                var _this=this;
+                $.get("./static/js/express.json",function (res) {
+                    _this.my=res;
+                })
+            }
+        })
+    })
+})
 Vue.component("page-header",{
     template:"#header_tpl"
 })
@@ -66,10 +82,15 @@ var routes  =[
                 path:"/nav",
                 name:"nav",
                 component:nav
+            },
+            {
+                path:"/about",
+                name:"about",
+                component:about
             }
         ]
     }
-]
+];
 new Vue({
     template:"<router-view></router-view>",
     data:{
