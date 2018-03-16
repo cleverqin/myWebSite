@@ -33,9 +33,15 @@ var index={
     methods:{
         getWeather:function () {
             var _this=this;
-            $.getJSON("http://api.asilu.com/weather?city=北京&callback=?", function(data) {
-                _this.weather=data
-            });
+            $.ajax({
+                url:"http://api.asilu.com/weather",
+                data:{city:"北京"},
+                type:"get",
+                dataType:"jsonp",
+                success:function (data) {
+                    _this.weather=data;
+                }
+            })
         },
         renderQRcode:function (txt) {
             this.qrcode.makeCode(txt)
