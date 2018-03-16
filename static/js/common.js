@@ -34,7 +34,7 @@ var index={
         getWeather:function () {
             var _this=this;
             $.ajax({
-                url:"http://api.asilu.com/weather",
+                url:"https://api.asilu.com/weather",
                 data:{city:"北京"},
                 type:"get",
                 dataType:"jsonp",
