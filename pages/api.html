@@ -1,0 +1,78 @@
+<section class="api_page">
+    <div class="ui-content">
+       <div class="content-body">
+           <form class="demo-form-inline"  ref="ruleForm">
+               <div class="ui-form-group">
+                   <label>接口选择：</label>
+                   <div class="ui-form-element">
+                       <select v-model="apiIndex" placeholder="请选择" class="ui-form-input">
+                           <option
+                                   v-for="(item, index) in apiList"
+                                   :label="item.title"
+                                   :value="index">
+                           </option>
+                       </select>
+                   </div>
+               </div>
+           </form>
+           <table class="ui-border-table">
+               <thead>
+               <tr>
+                   <td>接口名称</td>
+                   <td>接口地址</td>
+               </tr>
+               </thead>
+               <tbody>
+               <tr v-for="item in [apiList[apiIndex]]">
+                   <td v-text="item.title"></td>
+                   <td v-text="item.url"></td>
+               </tr>
+               </tbody>
+           </table>
+           <table class="ui-border-table">
+               <thead>
+               <tr>
+                   <td>名称</td>
+                   <td>key</td>
+                   <td>默认值</td>
+                   <td>备注</td>
+               </tr>
+               </thead>
+               <tbody>
+               <tr v-for="item in apiList[apiIndex].data">
+                   <td v-text="item.title"></td>
+                   <td v-text="item.name"></td>
+                   <td v-text="item.value"></td>
+                   <td v-text="item.desc"></td>
+               </tr>
+               </tbody>
+           </table>
+           <form class="demo-form-inline postform"  ref="ruleForm">
+               <div class="ui-form-group"
+                    v-for="(item, index) in apiList[apiIndex].data"
+                    :label="item.title"
+                    :key="item.name"
+                    :prop="item.name"
+               >
+                   <label v-text="item.title"></label>
+                   <div class="ui-form-element" v-if="!item.list">
+                       <input v-model="form[item.name]"  class="ui-form-input" type="text" v-bind:name="item.name" />
+                   </div>
+                   <div class="ui-form-element" v-if="item.list">
+                       <select v-model="form[item.name]" placeholder="请选择" v-bind:name="item.name" class="ui-form-input">
+                           <option
+                                   v-for="(value, key) in item.list"
+                                   :label="value"
+                                   :value="key">
+                           </option>
+                       </select>
+                   </div>
+               </div>
+               <div class="ui-form-group">
+                   <a  class="ui-btn-primary ui-btn" href="javascript:" @click="submitForm()">确定</a>
+               </div>
+           </form>
+           <div id="resBox"><pre v-html="res" class="api-json" ></pre></div>
+       </div>
+    </div>
+</section>

@@ -61,6 +61,138 @@ var about=Vue.component('about',function (resolve, reject) {
         })
     })
 })
+var apiList=[
+    {
+        title: '获取当前经纬度信息',
+        url: 'https://api.asilu.com/geo/',
+        key: 'geo',
+        requestType:"jsonp",
+        data: []
+    }, {
+        title: '天气查询',
+        url: 'https://api.asilu.com/weather/',
+        key: 'weather',
+        requestType:"jsonp",
+        data: [
+            {
+                title: '城市',
+                name: 'city',
+                value: '北京'
+            }
+        ]
+    }, {
+        title: '手机归属地查询',
+        url: 'https://api.asilu.com/phone/',
+        key: 'phone',
+        requestType:"jsonp",
+        data: [
+            {
+                title: '手机号码',
+                name: 'phone',
+                value: '13666666666'
+            }
+        ]
+    }, {
+        title: 'IP 归属地查询',
+        url: 'https://api.asilu.com/ip/',
+        key: 'ip',
+        requestType:"jsonp",
+        data: [
+            {
+                title: 'IP 或 域名',
+                name: 'ip',
+                value: 'www.baidu.com'
+            }
+        ]
+    }, {
+        title: '快递查询',
+        url: 'https://api.asilu.com/express/',
+        key: 'express',
+        requestType:"jsonp",
+        data: [
+            {
+                title: '快递单号',
+                name: 'id',
+                value: '12345678'
+            }
+            , {
+                title: '快递公司 (code 或者 中文)',
+                name: 'com',
+                value: '圆通'
+            }
+        ]
+    } , {
+        title: '网易音乐信息',
+        url: 'https://api.asilu.com/163music/',
+        key: '163music',
+        requestType:"jsonp",
+        data: [
+            {
+                title: '类型',
+                name: 'type',
+                value:'playlist',
+                list:{playlist: '播放列表', song: '歌曲', album: '专辑', userlist: '用户', songlrc: '歌词'},
+                desc: "可查询类型 {playlist: '播放列表', song: '歌曲', album: '专辑', userlist: '用户', songlrc: '歌词'}"
+            }
+            , {
+                title: '歌词格式',
+                name: 'lrc',
+                value: '0',
+                list:{'0': '无', json: 'JSON 格式', url: 'LRC 网址'},
+                desc:"{'0': '无', json: 'JSON 格式', url: 'LRC 网址'}"
+            }
+            , {
+                title: 'ID',
+                name: 'id',
+                value: '47201542'
+            }
+        ]
+    }
+];
+var api=Vue.component('api',function (resolve, reject) {
+    $.get("./pages/api.html",function (data) {
+        resolve({
+            template: data,
+            data:function() {
+                return {
+                    apiList:apiList,
+                    apiIndex:0,
+                    form:{},
+                    res:""
+                };
+            },
+            watch:{
+                apiIndex:{
+                    handler:function () {
+                        var api=this.apiList[this.apiIndex];
+                        var obj={};
+                        for(var i=0;i<api.data.length;i++){
+                            var item=api.data[i];
+                            obj[item.name]=item.value
+                        }
+                        this.form=obj;
+                    },
+                    deep:true
+                }
+            },
+            methods: {
+                submitForm:function() {
+                    var _this=this;
+                    var api=this.apiList[this.apiIndex];
+                    $.ajax({
+                        type:"get",
+                        url:api.url,
+                        data:_this.form,
+                        dataType:api.requestType,
+                        success:function (body) {
+                            $('.api-json').jsonViewer(body);
+                        }
+                    })
+                }
+            }
+        })
+    })
+})
 Vue.component("page-header",{
     template:"#header_tpl"
 })
@@ -87,6 +219,11 @@ var routes  =[
                 path:"/about",
                 name:"about",
                 component:about
+            },
+            {
+                path:"/api",
+                name:"api",
+                component:api
             }
         ]
     }

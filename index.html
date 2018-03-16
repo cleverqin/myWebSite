@@ -33,7 +33,8 @@
                 <ul class="header-nav ui-row">
                     <li><router-link to="/" :class="{active:$route.path=='/'}">首页</router-link></li>
                     <li><router-link to="/nav" :class="{active:$route.path=='/nav'}">网站导航</router-link></li>
-                    <li><router-link to="/about" :class="{active:$route.path=='/about'}">关于我</router-link></li>
+                    <!--<li><router-link to="/about" :class="{active:$route.path=='/about'}">关于我</router-link></li>-->
+                    <li><router-link to="/api" :class="{active:$route.path=='/api'}">接口测试</router-link></li>
                 </ul>
             </div>
         </div>
@@ -358,6 +359,7 @@
 <script src="static/libs/js/vue-router.min.js"></script>
 <script src="static/libs/js/qrcode.min.js"></script>
 <script src="static/js/plug-ins.js"></script>
+<script src="static/libs/js/jquery.json-viewer.js"></script>
 <script src="static/js/common.js"></script>
 </body>
 </html>

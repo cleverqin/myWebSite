@@ -498,3 +498,73 @@ header{
     line-height: 32px;
     padding-left: 15px;
 }
+/************api接口调用*************/
+.api_page{
+    margin-top: 20px;
+}
+.api_page .content-body{
+    padding: 15px;
+}
+.api_page .ui-content{
+    background: #ffffff;
+}
+.ui-form-group:after,.demo-form-inline:after{
+    display: table;
+    content: "";
+    clear: both;
+}
+.ui-form-group{
+    float: left;
+    margin-right: 10px;
+}
+.ui-form-group label{
+    display: block;
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #5a5e66;
+    line-height: 40px;
+    padding: 0 12px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ui-form-input{
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #d8dce5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #5a5e66;
+    display: inline-block;
+    font-size: 14px;
+    height: 40px;
+    line-height: 1;
+    outline: 0;
+    padding: 0 15px;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 217px;
+}
+.ui-form-input:focus{
+    border-color: #3a8ee6;
+}
+.ui-form-element{
+    float: left;
+}
+.ui-border-table{
+    width: 100%;
+    margin-top: 15px;
+}
+.ui-border-table td{
+    border: 1px solid #e6ebf5;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #878d99;
+}
+.ui-border-table thead td{
+    font-weight: bold;
+}
+.postform{
+    margin-top: 15px;
+}

@@ -442,3 +442,68 @@
     height: 40px;
     text-align: center;
 }
+/************************************/
+/****************************/
+ul.json-dict, ol.json-array {
+    list-style-type: none;
+    margin: 0 0 0 1px;
+    border-left: 1px dotted #b9bbc0;
+    padding-left: 2em;
+}
+.json-dict>li{
+    line-height: 20px;
+    color: #606266;
+}
+.json-string {
+    color: #168803;
+}
+.json-literal {
+    color: #5f4499;
+    font-size: 14px;
+}
+
+/* Toggle button */
+a.json-toggle {
+    position: relative;
+    color: #606266;
+    text-decoration: none;
+}
+a.json-toggle:focus {
+    outline: none;
+}
+a.json-toggle:before {
+    color: #606266;
+    content: "-"; /* down arrow */
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: -20px;
+    border: 1px solid #1d90e6;
+    text-align: center;
+    line-height: 14px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+a.json-toggle.collapsed:before {
+    content: "+"; /* down arrow */
+}
+
+/* Collapsable placeholder links */
+a.json-placeholder {
+    color: #909399;
+    padding: 0 1em;
+    text-decoration: none;
+}
+a.json-placeholder:hover {
+    text-decoration: underline;
+}
+.json-renderer{
+    padding: 30px;
+    margin: 0 auto;
+}
+.api-json{
+    padding: 0 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #606266;
+}
